@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput,Dimensions,TouchableOpacity } from 'react-native';
 
 export default function OTP(props) {
+  
   const [code, setCode] = useState('');
 
   return (
