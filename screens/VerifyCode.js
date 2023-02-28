@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 25,
     fontWeight:400,
+
   },
   bigCircle: {
     width: Dimensions.get('window').height * 0.40,
