@@ -5,7 +5,7 @@ import { FontAwesome } from '@expo/vector-icons';
 import colors from '../colors';
 import { Entypo } from '@expo/vector-icons';
 
-const Home = () => {
+const Home = ({ navigation }) => {
 
     const navigation = useNavigation();
 
