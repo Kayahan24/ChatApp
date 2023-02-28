@@ -67,7 +67,7 @@ import React, {
         setMessages(previousMessages =>
           GiftedChat.append(previousMessages, messages)
         );
-        // setMessages([...messages, ...messages]);
+       
         const { _id, createdAt, text, user } = messages[0];    
         addDoc(collection(database, 'chats'), {
           _id,
@@ -78,11 +78,6 @@ import React, {
       }, []);
 
       return (
-        // <>
-        //   {messages.map(message => (
-        //     <Text key={message._id}>{message.text}</Text>
-        //   ))}
-        // </>
         <GiftedChat
           messages={messages}
           showAvatarForEveryMessage={false}
