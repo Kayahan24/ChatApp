@@ -13,9 +13,12 @@ import Authenticated from './screens/Authenticated';
 
 const Stack = createStackNavigator();
 const AuthenticatedUserContext = createContext({});
+const getData = (data) =>{
+  console.log(data)
+};
 
 const AuthenticatedUserProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+const [user, setUser] = useState(null);
 return (
     <AuthenticatedUserContext.Provider value={{ user, setUser }}>
       {children}
@@ -28,7 +31,6 @@ function ChatStack() {
     <Stack.Navigator defaultScreenOptions={Home}>
       <Stack.Screen name='Home' component={Home} />
       <Stack.Screen name='Chat' component={Chat} />
-      
     </Stack.Navigator>
   );
 }
@@ -39,10 +41,10 @@ function AuthStack() {
       <Stack.Screen name='Login' component={Login} />
       <Stack.Screen name='Signup' component={Signup} />
       <Stack.Screen name='PhoneScreen' component={PhoneScreen} />
-      <Stack.Screen name='Authenticated' component={Authenticated} />
     </Stack.Navigator>
   );
 }
+
 
 function RootNavigator() {
   const { user, setUser } = useContext(AuthenticatedUserContext);
@@ -67,12 +69,14 @@ if (isLoading) {
     );
   }
 
-return (
+  return (
     <NavigationContainer>
       {user ? <ChatStack /> : <AuthStack />}
     </NavigationContainer>
   );
 }
+
+
 
 export default function App() {
   return (
