@@ -91,7 +91,8 @@ const styles = StyleSheet.create({
     position: "absolute",
     bottom: 0,
     backgroundColor: '#fff',
-    borderTopLeftRadius: 60,
+    borderTopRightRadius:100,
+    padding:10
   },
   form: {
     flex: 1,
@@ -104,6 +105,6 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 40,
+    marginTop: 20,
   },
 });

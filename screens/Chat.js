@@ -80,8 +80,8 @@ import React, {
       return (
         <GiftedChat
           messages={messages}
-          showAvatarForEveryMessage={false}
-          showUserAvatar={false}
+          showAvatarForEveryMessage={true}
+          showUserAvatar={true}
           onSend={messages => onSend(messages)}
           messagesContainerStyle={{
             backgroundColor: '#fff'
@@ -91,7 +91,7 @@ import React, {
             borderRadius: 20,
           }}
           user={{
-            _id: auth?.currentUser?.email,
+            //_id: auth?.currentUser?.email,
             avatar: 'https://i.pravatar.cc/300'
           }}
         />

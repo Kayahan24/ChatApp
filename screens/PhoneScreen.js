@@ -5,11 +5,10 @@ import VerifyCode from '../screens/VerifyCode';
 import Authenticated from '../screens/Authenticated';
 import { useNavigation } from '@react-navigation/native';
 
-export default function PhoneScreen() {
+export default function PhoneScreen({navigation}) {
     
   const [confirm, setConfirm] = useState(null);
   const [authenticated, setAuthenticated] = useState(false);
-  const navigation = useNavigation();
 
   async function signIn(phoneNumber) {
     try {
@@ -32,13 +31,14 @@ export default function PhoneScreen() {
   auth().onAuthStateChanged((user) => {
     if(user) {
       setAuthenticated(true);
-      console.log("Giriş Başarılı")
     } else {
       setAuthenticated(false);
     }
   })
 
-  if (authenticated) return <Authenticated/>
+  if (authenticated) return (
+     navigation.navigate("GetAuthentication")
+  )
 
   if (confirm) return <VerifyCode onSubmit={confirmVerificationCode} />;
 
