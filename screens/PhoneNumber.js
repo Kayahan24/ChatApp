@@ -10,7 +10,6 @@ import {
   Text,
   Alert,
   Dimensions,
-  Button
 } from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import { useNavigation } from '@react-navigation/native';
@@ -22,6 +21,7 @@ export default function PhoneNumber(props) {
   const [formattedValue, setFormattedValue] = useState('');
   const phoneInput = useRef(null);
   const navigation = useNavigation();
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
