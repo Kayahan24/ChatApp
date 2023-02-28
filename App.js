@@ -8,6 +8,7 @@ import Login from './screens/Login';
 import Signup from './screens/Signup';
 import Chat from './screens/Chat';
 import Home from './screens/Home';
+import PhoneScreen from './screens/PhoneScreen';
 
 const Stack = createStackNavigator();
 const AuthenticatedUserContext = createContext({});
@@ -35,6 +36,7 @@ function AuthStack() {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name='Login' component={Login} />
       <Stack.Screen name='Signup' component={Signup} />
+      <Stack.Screen name='PhoneScreen' component={PhoneScreen} />
     </Stack.Navigator>
   );
 }

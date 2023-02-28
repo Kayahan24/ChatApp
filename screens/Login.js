@@ -13,7 +13,7 @@ export default function Login({ navigation }) {
     if (email !== "" && password !== "") {
       signInWithEmailAndPassword(auth, email, password)
         .then(() => console.log("Giriş Başarılı"))
-        .catch((err) => Alert.alert("Hatalı Giriş", err.message));
+        .catch((err) => Alert.alert("Hatalı Giriş", "Lütfen Tekrar Giriniz..."));
     }
   };
   
@@ -54,6 +54,9 @@ export default function Login({ navigation }) {
           <Text style={{color: '#f57c00', fontWeight: '600', fontSize: 14}}>Üye Ol</Text>
         </TouchableOpacity>
       </View>
+      <TouchableOpacity style={styles.phonebutton} onPress={()=>navigation.navigate("PhoneScreen")}>
+        <Text style={{fontWeight: 'bold', color: '#fff', fontSize: 18}}>Telefonla Giriş</Text>
+      </TouchableOpacity>
       </SafeAreaView>
       </View>
       <StatusBar barStyle="light-content" />
@@ -91,12 +94,12 @@ const styles = StyleSheet.create({
   },
   whiteSheet: {
     width: '100%',
-    height: 400,
+    height: 500,
     position: "absolute",
     backgroundColor: '#fff',
     borderRadius:50,
     justifyContent:"center",
-    top:"25%"
+    top:"15%"
   },
   form: {
     flex: 1,
@@ -110,6 +113,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 40,
+  },
+  phonebutton: {
+    backgroundColor: '#e02a48',
+    height: 58,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: 20,
   },
   bigCircle: {
     width: Dimensions.get('window').height * 0.7,
